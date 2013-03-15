@@ -15,57 +15,15 @@
  // Does nothing
  }
  
- // Callback when the location of the page changes
- // called from native
- ___FILEBASENAME___._onLocationChange = function(newLoc)
- {
- window.plugins.___FILEBASENAME___.onLocationChange(newLoc);
- };
- 
- // Callback when the user chooses the 'Done' button
- // called from native
- ___FILEBASENAME___._onClose = function()
- {
- window.plugins.___FILEBASENAME___.onClose();
- };
- 
- // Callback when the user chooses the 'open in Safari' button
- // called from native
- ___FILEBASENAME___._onOpenExternal = function()
- {
- window.plugins.___FILEBASENAME___.onOpenExternal();
- };
- 
- // Pages loaded into the ___FILEBASENAME___ can execute callback scripts, so be careful to
- // check location, and make sure it is a location you trust.
- // Warning ... don't exec arbitrary code, it's risky and could fuck up your app.
- // called from native
- ___FILEBASENAME___._onJSCallback = function(js,loc)
- {
- // Not Implemented
- //window.plugins.___FILEBASENAME___.onJSCallback(js,loc);
- };
  
 /* The interface that you will use to access functionality */
  
  // Show a webpage, will result in a callback to onLocationChange
- ___FILEBASENAME___.prototype.startListen = function(loc,test)
+ ___FILEBASENAME___.prototype.startListen = function(upBlock,downBlock)
  {
- cordovaRef.exec("___FILEBASENAME___.startListen", loc,test);
+ cordovaRef.exec("___FILEBASENAME___.startListen", upBlock,downBlock);
  };
  
- // close the browser, will NOT result in close callback
- ___FILEBASENAME___.prototype.close = function()
- {
- cordovaRef.exec("___FILEBASENAME___.close");
- };
- 
- // Not Implemented
- ___FILEBASENAME___.prototype.jsExec = function(jsString)
- {
- // Not Implemented!!
- //PhoneGap.exec("___FILEBASENAME___.jsExec",jsString);
- };
  
  // Note: this plugin does NOT install itself, call this method some time after deviceready to install it
  // it will be returned, and also available globally from window.plugins.childBrowser

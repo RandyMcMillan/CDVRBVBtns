@@ -20,13 +20,13 @@
             <script type="text/javascript">
                 
                 
-            /*
-            //  ___FILEBASENAME___ Template Created Jan 7 2013
-            //  Copyright 2013 @RandyMcMillan
-
-            //  Created by ___FULLUSERNAME___ on ___DATE___.  
-            //  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-            */
+                /*
+                 //  ___FILEBASENAME___ Template Created Jan 7 2013
+                 //  Copyright 2013 @RandyMcMillan
+                 
+                 //  Created by ___FULLUSERNAME___ on ___DATE___.
+                 //  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
+                 */
                 function onBodyLoad()
                 {
                     document.addEventListener("deviceready", onDeviceReady, false);
@@ -45,7 +45,7 @@
                         cb.onLocationChange = function(loc){ root.locChanged(loc); };
                         cb.onClose = function(){root.onCloseBrowser()};
                         cb.onOpenExternal = function(){root.onOpenExternal();};
-                        cb.showWebPage("http://google.com");
+                        //cb.startListen("upBlock","downBlock");
                         
                     }
                 }
@@ -64,11 +64,11 @@
                 
                 
                 /*
-                
+                 
                  
                  loc = 'http://www.google.com';
                  cordova.exec("___FILEBASENAME___.showWebPage", loc);
-
+                 
                  
                  */
                 
@@ -86,9 +86,10 @@
         </ol>
         
         <button onclick="cb.showWebPage('http://google.com');">Click to open ___FILEBASENAME___!</button>
-        <button onclick="cordova.exec('___FILEBASENAME___.showWebPage', 'http://google.com');">Click to open ___FILEBASENAME___!</button>
-        <button onclick="cordova.exec('___FILEBASENAME___.showWebPage', 'res/icon/ios/icon-57.png');">Click to open ChildBrowser!</button>
-        <button onclick="cordova.exec('___FILEBASENAME___.showWebPage', 'spec.html');">Click to open ChildBrowser!</button>
-
+        <button onclick="cordova.exec('___FILEBASENAME___.startListen', 'upBlock','downBlock');">Click to open ___FILEBASENAME___!</button>
+        <button onclick="cordova.exec('___FILEBASENAME___.startListen', 'res/icon/ios/icon-57.png');">Click to open ChildBrowser!</button>
+        <button onclick="cordova.exec('___FILEBASENAME___.startListen', 'spec.html');">Click to open ChildBrowser!</button>
+        
     </body>
 </html>
+b

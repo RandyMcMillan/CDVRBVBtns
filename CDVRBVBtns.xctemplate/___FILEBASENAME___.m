@@ -35,64 +35,32 @@
 	 *   NSString* strOrientations = [ options objectForKey:@"supportedOrientations"];
 	 *   NSArray* supportedOrientations = [strOrientations componentsSeparatedByString:@","];
 	 */
+   
+    
+    NSString *upBlock = (NSString *)[arguments objectAtIndex:0];
+	NSString *downBlock = (NSString *)[arguments objectAtIndex:1];
+    NSLog(@" upBlock - %@, downBlock - %@",upBlock,downBlock);
+
     
     counter = 0;
     
-    RBVolumeButtons *buttonStealer = [[[RBVolumeButtons alloc] init] autorelease];
-    buttonStealer.upBlock = ^{
+    RBVolumeButtons *buttonListener = [[[RBVolumeButtons alloc] init] autorelease];
+    buttonListener.upBlock = ^{
         counter++;
         
-        NSLog(@"_____________________upBLock");
+        NSLog(@"upBLock %i",counter);
         //[counterLabel setText:[NSString stringWithFormat:@"%i",counter]];
     };
-    buttonStealer.downBlock = ^{
+    buttonListener.downBlock = ^{
         counter--;
         //[counterLabel setText:[NSString stringWithFormat:@"%i",counter]];
-        NSLog(@"_____________________downBlock");
+        NSLog(@"downBlock %i",counter);
     };
-    
-
-    
 
     //	[self.viewController presentModalViewController:___FILEBASENAME___ animated:YES];
-
-	NSString *url = (NSString *)[arguments objectAtIndex:0];
-	NSString *test = (NSString *)[arguments objectAtIndex:1];
-    NSLog(@" test - %@",test);
-	[self.___FILEBASENAME___ loadURL:url];
+	//[self.___FILEBASENAME___ loadURL:url];
 }
 
-- (void)getPage:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options
-{
-	NSString *url = (NSString *)[arguments objectAtIndex:0];
-
-	[self.___FILEBASENAME___ loadURL:url];
-}
-
-- (void)close:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options	// args: url
-{
-	[self.___FILEBASENAME___ closeBrowser];
-}
-
-- (void)onClose
-{
-	[self.webView stringByEvaluatingJavaScriptFromString:@"window.plugins.___FILEBASENAME___.onClose();"];
-}
-
-- (void)onOpenInSafari
-{
-	[self.webView stringByEvaluatingJavaScriptFromString:@"window.plugins.___FILEBASENAME___.onOpenExternal();"];
-}
-
-- (void)onChildLocationChange:(NSString *)newLoc
-{
-	NSString	*tempLoc	= [NSString stringWithFormat:@"%@", newLoc];
-	NSString	*encUrl		= [tempLoc stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-
-	NSString *jsCallback = [NSString stringWithFormat:@"window.plugins.___FILEBASENAME___.onLocationChange('%@');", encUrl];
-
-	[self.webView stringByEvaluatingJavaScriptFromString:jsCallback];
-}
 
 #if !__has_feature(objc_arc)
 	- (void)dealloc

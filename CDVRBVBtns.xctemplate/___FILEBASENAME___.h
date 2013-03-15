@@ -19,12 +19,11 @@
     float launchVolume;
     IBOutlet UILabel *counterLabel;
     int counter;
-
+    IBOutlet RBVolumeButtons *buttonListener;
 }
 
 @property (nonatomic, strong) ___FILEBASENAME___ViewController *___FILEBASENAME___;
-
+@property (nonatomic,retain) RBVolumeButtons *buttonListener;
 - (void)startListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
-- (void)onChildLocationChange:(NSString *)newLoc;
 
 @end
