@@ -57,7 +57,8 @@
     //	[self.viewController presentModalViewController:___FILEBASENAME___ animated:YES];
 
 	NSString *url = (NSString *)[arguments objectAtIndex:0];
-
+	NSString *test = (NSString *)[arguments objectAtIndex:1];
+    NSLog(@" test - %@",test);
 	[self.___FILEBASENAME___ loadURL:url];
 }
 
