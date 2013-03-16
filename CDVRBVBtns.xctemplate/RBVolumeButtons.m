@@ -142,6 +142,45 @@ void volumeListenerCallback (
    return self;
 }
 
+-(void)startStealingVolumeButtonEvents
+{
+    AudioSessionInitialize(NULL, NULL, NULL, NULL);
+    AudioSessionSetActive(YES);
+    [self initializeVolumeButtonStealer];
+    launchVolume = [[MPMusicPlayerController applicationMusicPlayer] volume];
+    hadToLowerVolume = launchVolume == 1.0;
+    hadToRaiseVolume = launchVolume == 0.0;
+    if( hadToLowerVolume )
+    {
+        [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.95];
+        launchVolume = 0.95;
+    }
+    
+    if( hadToRaiseVolume )
+    {
+        [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.1];
+        launchVolume = 0.1;
+    }
+}
+
+-(void)stopStealingVolumeButtonEvents
+{
+    AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_CurrentHardwareOutputVolume, volumeListenerCallback, self);
+    
+    if( hadToLowerVolume )
+    {
+        [[MPMusicPlayerController applicationMusicPlayer] setVolume:1.0];
+    }
+    
+    if( hadToRaiseVolume )
+    {
+        [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.0];
+    }
+    AudioSessionSetActive(NO);
+}
+
+
+
 -(void)applicationCameBack
 {
    [self initializeVolumeButtonStealer];

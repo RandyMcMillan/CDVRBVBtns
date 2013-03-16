@@ -22,4 +22,8 @@ typedef void (^ButtonBlock)();
 @property (nonatomic, copy) ButtonBlock downBlock;
 @property (readonly) float launchVolume;
 
+-(void)applicationWentAway;
+-(void)startStealingVolumeButtonEvents;
+-(void)stopStealingVolumeButtonEvents;
+
 @end

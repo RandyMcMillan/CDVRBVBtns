@@ -45,13 +45,15 @@
     counter = 0;
     
     RBVolumeButtons *buttonListener = [[[RBVolumeButtons alloc] init] autorelease];
-    buttonListener.upBlock = ^{
+    self.buttonListener = buttonListener;
+    
+    self.buttonListener.upBlock = ^{
         counter++;
         
         NSLog(@"upBLock %i",counter);
         //[counterLabel setText:[NSString stringWithFormat:@"%i",counter]];
     };
-    buttonListener.downBlock = ^{
+    self.buttonListener.downBlock = ^{
         counter--;
         //[counterLabel setText:[NSString stringWithFormat:@"%i",counter]];
         NSLog(@"downBlock %i",counter);
@@ -59,6 +61,15 @@
 
     //	[self.viewController presentModalViewController:___FILEBASENAME___ animated:YES];
 	//[self.___FILEBASENAME___ loadURL:url];
+}
+
+- (void)stopListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options
+{
+
+
+    NSLog(@"stopListen");
+    [self.buttonListener stopStealingVolumeButtonEvents];
+
 }
 
 

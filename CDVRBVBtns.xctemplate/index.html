@@ -85,10 +85,9 @@
             <li>Add your allowed <strong>hosts</strong> in Cordova.plist/ExternalHosts (wildcards OK, don't enter the URL scheme)</li>
         </ol>
         
-        <button onclick="cb.showWebPage('http://google.com');">Click to open ___FILEBASENAME___!</button>
-        <button onclick="cordova.exec('___FILEBASENAME___.startListen', 'upBlock','downBlock');">Click to open ___FILEBASENAME___!</button>
-        <button onclick="cordova.exec('___FILEBASENAME___.startListen', 'res/icon/ios/icon-57.png');">Click to open ChildBrowser!</button>
-        <button onclick="cordova.exec('___FILEBASENAME___.startListen', 'spec.html');">Click to open ChildBrowser!</button>
+        <button onclick="cb.startListen('upBlock','downBLock');">Click to startListen!</button>
+        </br></br> <button onclick="cordova.exec('___FILEBASENAME___.startListen', 'upBlock','downBlock');">Click to startListen!</button>
+        <button onclick="cordova.exec('___FILEBASENAME___.stopListen', 'upBlock','downBlock');">Click to stopListen!</button>
         
     </body>
 </html>

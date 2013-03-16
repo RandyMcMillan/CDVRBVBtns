@@ -18,13 +18,16 @@
  
 /* The interface that you will use to access functionality */
  
- // Show a webpage, will result in a callback to onLocationChange
  ___FILEBASENAME___.prototype.startListen = function(upBlock,downBlock)
  {
  cordovaRef.exec("___FILEBASENAME___.startListen", upBlock,downBlock);
  };
  
  
+ ___FILEBASENAME___.prototype.stopListen = function(upBlock,downBlock)
+ {
+ cordovaRef.exec("___FILEBASENAME___.stopListen", upBlock,downBlock);
+ };
  // Note: this plugin does NOT install itself, call this method some time after deviceready to install it
  // it will be returned, and also available globally from window.plugins.childBrowser
  ___FILEBASENAME___.install = function()

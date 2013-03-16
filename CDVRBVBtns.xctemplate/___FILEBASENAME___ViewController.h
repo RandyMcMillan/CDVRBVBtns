@@ -17,9 +17,9 @@
  *  Discussion:
  *    Invoked when a new page has loaded
  */
-- (void)onChildLocationChange:(NSString *)newLoc;
-- (void)onOpenInSafari;
-- (void)onClose;
+//- (void)onChildLocationChange:(NSString *)newLoc;
+//- (void)onOpenInSafari;
+//- (void)onClose;
 
 @end
 
