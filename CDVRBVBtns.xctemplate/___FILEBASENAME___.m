@@ -60,6 +60,8 @@
     NSString	*callbackId		= [arguments pop];
     NSLog(@"callBackId = %@",callbackId);
 	NSString	*objectAtIndex0 = [arguments objectAtIndex:0];
+	NSString	*objectAtIndex1 = [arguments objectAtIndex:1];
+	NSString	*objectAtIndex2 = [arguments objectAtIndex:2];
     
 	CDVViewController	*mvc___FILEBASENAME___ = (CDVViewController *)[super viewController];
 	//CDVPluginResult		*result;
@@ -73,11 +75,11 @@
     self.buttonListener.upBlock = ^{
         counter++;
         
-        NSLog(@"objectAtIndex:%@ %i",[arguments objectAtIndex:0],counter);
+        NSLog(@"objectAtIndex:%@ %i",[arguments objectAtIndex:1],counter);
         //[counterLabel setText:[NSString stringWithFormat:@"%i",counter]];
         
             //NSString *jsString = k___FILEBASENAME___INIT;
-            NSString *jsString = [NSString stringWithFormat:@"%@('%d');",[arguments objectAtIndex:0],counter];
+            NSString *jsString = [NSString stringWithFormat:@"%@('%d');",[arguments objectAtIndex:1],counter];
             [mvc___FILEBASENAME___.webView stringByEvaluatingJavaScriptFromString:jsString];
             //result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Success! const k___FILEBASENAME___INIT was evaluated by webview!"];
             //[self writeJavascript:[result toSuccessCallbackString:callbackId]];
@@ -90,17 +92,20 @@
         
         //[counterLabel setText:[NSString stringWithFormat:@"%i",counter]];
         NSLog(@"downBlock %i",counter);
+        
+        NSLog(@"objectAtIndex:%@ %i",[arguments objectAtIndex:2],counter);
+        //[counterLabel setText:[NSString stringWithFormat:@"%i",counter]];
+        
+        //NSString *jsString = k___FILEBASENAME___INIT;
+        NSString *jsString = [NSString stringWithFormat:@"%@('%d');",[arguments objectAtIndex:2],counter];
+        [mvc___FILEBASENAME___.webView stringByEvaluatingJavaScriptFromString:jsString];
+        //result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Success! const k___FILEBASENAME___INIT was evaluated by webview!"];
+        //[self writeJavascript:[result toSuccessCallbackString:callbackId]];
+        
+
+        
     };
 
-    
-    
-	if ([objectAtIndex0 isEqualToString:[arguments objectAtIndex:0]]) {
-		//NSString *jsString = k___FILEBASENAME___INIT;
-		NSString *jsString = [NSString stringWithFormat:@"%@('%d');",[arguments objectAtIndex:0],counter];
-		[mvc___FILEBASENAME___.webView stringByEvaluatingJavaScriptFromString:jsString];
-		//result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Success! const k___FILEBASENAME___INIT was evaluated by webview!"];
-		//[self writeJavascript:[result toSuccessCallbackString:callbackId]];
-	} else { NSLog(@"[arguments objectAtIndex:0] = %@",[arguments objectAtIndex:0]);}
 
     
     
