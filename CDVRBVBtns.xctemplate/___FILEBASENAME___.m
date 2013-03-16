@@ -10,6 +10,14 @@
 
 @synthesize ___FILEBASENAME___;
 
+- (void)initListener:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options
+{
+
+    NSLog(@"initListener");
+    RBVolumeButtons *buttonListener = [[[RBVolumeButtons alloc] init] autorelease];
+    self.buttonListener = buttonListener;
+
+}
 - (void)startListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options	// args: url
 {
 	/* setting audio session category to "Playback" (since iOS 6) */
@@ -44,8 +52,8 @@
     
     counter = 0;
     
-    RBVolumeButtons *buttonListener = [[[RBVolumeButtons alloc] init] autorelease];
-    self.buttonListener = buttonListener;
+    //RBVolumeButtons *buttonListener = [[[RBVolumeButtons alloc] init] autorelease];
+    //self.buttonListener = buttonListener;
     
     self.buttonListener.upBlock = ^{
         counter++;

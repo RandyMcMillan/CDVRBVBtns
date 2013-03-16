@@ -25,6 +25,7 @@
 @property (nonatomic, strong) ___FILEBASENAME___ViewController *___FILEBASENAME___;
 @property (nonatomic,strong) RBVolumeButtons *buttonListener;
 
+- (void)initListener:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
 - (void)startListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
 - (void)stopListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
 

@@ -16,6 +16,8 @@
 -(void)volumeUp;
 -(void)applicationCameBack;
 -(void)applicationWentAway;
+-(void)startStealingVolumeButtonEvents;
+-(void)stopStealingVolumeButtonEvents;
 @end
 
 @implementation RBVolumeButtons
