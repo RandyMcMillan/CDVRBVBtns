@@ -45,7 +45,7 @@
                         cb.onLocationChange = function(loc){ root.locChanged(loc); };
                         cb.onClose = function(){root.onCloseBrowser()};
                         cb.onOpenExternal = function(){root.onOpenExternal();};
-                        //cb.startListen("upBlock","downBlock");
+                        //cb.startListen("id","upBlock","downBlock");
                         
                     }
                 }
@@ -75,6 +75,23 @@
                     
                     console.log('upBlock');
                     console.log(counter);
+                    document.getElementById("p").innerHTML=counter;
+                    
+                    if (counter <= -1) {
+                        
+                        document.body.style.background = "#a9a7a6";
+                        
+                    }
+                    if (counter == 0) {
+                        
+                        document.body.style.background = "#878584";
+                        
+                    }
+                    if (counter >= 1) {
+                        
+                        document.body.style.background = "#686766";
+                        
+                    }
                     
                 }
                 
@@ -82,6 +99,23 @@
                     
                     console.log('downBlock');
                     console.log(counter);
+                    document.getElementById("p").innerHTML=counter;
+                    
+                    if (counter <= -1) {
+                        
+                        document.body.style.background = "#a9a7a6";
+                        
+                    }
+                    if (counter == 0) {
+                        
+                        document.body.style.background = "#878584";
+                        
+                    }
+                    if (counter >= 1) {
+                        
+                        document.body.style.background = "#686766";
+                        
+                    }
                     
                 }
                 
@@ -89,18 +123,17 @@
             </head>
     <body onload="onBodyLoad()">
         <h1>Hey, it's Cordova!</h1>
-        <p>Don't know how to get started? Check out our <em><a target="_blank" href="http://docs.phonegap.com/en/edge/guide_getting-started_ios_index.md.html#Getting%20Started%20with%20iOS">Getting Started Guide</a></em>
+        <p id="p">Don't know how to get started? Check out our <em><a target="_blank" href="http://docs.phonegap.com/en/edge/guide_getting-started_ios_index.md.html#Getting%20Started%20with%20iOS">Getting Started Guide</a></em>
         <br />
         <ol>
             <li>Check your console log for any white-list rejection errors.</li>
             <li>Add your allowed <strong>hosts</strong> in Cordova.plist/ExternalHosts (wildcards OK, don't enter the URL scheme)</li>
         </ol>
         
-        <button onclick="cb.startListen('upBlock','downBLock');">Click to startListen!</button>
+        <!--<button onclick="cb.startListen('id','upBlock','downBLock');">Click to startListen!</button>-->
         </br></br> <button onclick="cordova.exec('___FILEBASENAME___.initListener','id', 'upBlock','downBlock');">Click to initListen!</button>
         </br></br> <button onclick="cordova.exec('___FILEBASENAME___.startListen','id','upBlock','downBlock');">Click to startListen!</button>
         </br></br> <button onclick="cordova.exec('___FILEBASENAME___.stopListen','id', 'upBlock','downBlock');">Click to stopListen!</button>
-        <button onclick="cordova.exec('___FILEBASENAME___.stopListen','id', 'upBlock','downBlock');">Click to stopListen!</button>
         
     </body>
 </html>
