@@ -24,6 +24,10 @@
 
 @property (nonatomic, strong) ___FILEBASENAME___ViewController *___FILEBASENAME___;
 @property (nonatomic,strong) RBVolumeButtons *buttonListener;
+@property (nonatomic,strong) NSString *callBackId;
+@property (nonatomic,strong) NSString *objectAtIndex0;
+@property (nonatomic,strong) NSString *objectAtIndex1;
+@property (nonatomic,strong) NSString *objectAtIndex2;
 
 - (void)initListener:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
 - (void)startListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;

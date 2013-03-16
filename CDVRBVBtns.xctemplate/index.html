@@ -73,13 +73,15 @@
                  */
                 function upBlock(counter){
                     
-                    console.loc(counter);
+                    console.log('upBlock');
+                    console.log(counter);
                     
                 }
                 
                 function downBlock(counter){
                     
-                    console.loc(counter);
+                    console.log('downBlock');
+                    console.log(counter);
                     
                 }
                 
@@ -95,10 +97,11 @@
         </ol>
         
         <button onclick="cb.startListen('upBlock','downBLock');">Click to startListen!</button>
-        </br></br> <button onclick="cordova.exec('___FILEBASENAME___.initListener', 'upBlock','downBlock');">Click to initListen!</button>
+        </br></br> <button onclick="cordova.exec('___FILEBASENAME___.initListener','id', 'upBlock','downBlock');">Click to initListen!</button>
         </br></br> <button onclick="cordova.exec('___FILEBASENAME___.startListen','id','upBlock','downBlock');">Click to startListen!</button>
-        </br></br> <button onclick="cordova.exec('___FILEBASENAME___.stopListen', 'upBlock','downBlock');">Click to stopListen!</button>
-        <button onclick="cordova.exec('___FILEBASENAME___.stopListen', 'upBlock','downBlock');">Click to stopListen!</button>
+        </br></br> <button onclick="cordova.exec('___FILEBASENAME___.stopListen','id', 'upBlock','downBlock');">Click to stopListen!</button>
+        <button onclick="cordova.exec('___FILEBASENAME___.stopListen','id', 'upBlock','downBlock');">Click to stopListen!</button>
         
     </body>
 </html>
+b

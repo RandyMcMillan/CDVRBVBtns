@@ -57,15 +57,16 @@
         
     }
     
-    NSString	*callbackId		= [arguments pop];
-    NSLog(@"callBackId = %@",callbackId);
-	NSString	*objectAtIndex0 = [arguments objectAtIndex:0];
-	NSString	*objectAtIndex1 = [arguments objectAtIndex:1];
-	NSString	*objectAtIndex2 = [arguments objectAtIndex:2];
-    
+    //self.callBackId		= [arguments pop];
+    //NSLog(@"callBackId = %@",self.callBackId);
+	self.objectAtIndex0 = [arguments objectAtIndex:0];
+    NSLog(@"objectAtIndex0 = %@",self.objectAtIndex0);
+    self.objectAtIndex1 = [arguments objectAtIndex:1];
+    NSLog(@"objectAtIndex1 = %@",self.objectAtIndex1);
+    self.objectAtIndex2 = [arguments objectAtIndex:2];
+    NSLog(@"objectAtIndex2 = %@",self.objectAtIndex2);
 	CDVViewController	*mvc___FILEBASENAME___ = (CDVViewController *)[super viewController];
 	//CDVPluginResult		*result;
-
     
     counter = 0;
     
@@ -106,6 +107,7 @@
         
     };
 
+    
 
     
     

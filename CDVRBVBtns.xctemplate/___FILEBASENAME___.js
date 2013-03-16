@@ -18,9 +18,9 @@
  
 /* The interface that you will use to access functionality */
  
- ___FILEBASENAME___.prototype.initListener = function(upBlock,downBlock)
+ ___FILEBASENAME___.prototype.initListener = function(id,upBlock,downBlock)
  {
- cordovaRef.exec("___FILEBASENAME___.initListener", upBlock,downBlock);
+ cordovaRef.exec("___FILEBASENAME___.initListener",id, upBlock,downBlock);
  };
  
  ___FILEBASENAME___.prototype.startListen = function(id,upBlock,downBlock)
@@ -29,9 +29,9 @@
  };
  
  
- ___FILEBASENAME___.prototype.stopListen = function(upBlock,downBlock)
+ ___FILEBASENAME___.prototype.stopListen = function(id,upBlock,downBlock)
  {
- cordovaRef.exec("___FILEBASENAME___.stopListen", upBlock,downBlock);
+ cordovaRef.exec("___FILEBASENAME___.stopListen", id,upBlock,downBlock);
  };
  // Note: this plugin does NOT install itself, call this method some time after deviceready to install it
  // it will be returned, and also available globally from window.plugins.childBrowser
