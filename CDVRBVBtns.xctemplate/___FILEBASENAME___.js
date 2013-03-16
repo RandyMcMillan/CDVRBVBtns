@@ -18,9 +18,14 @@
  
 /* The interface that you will use to access functionality */
  
- ___FILEBASENAME___.prototype.startListen = function(upBlock,downBlock)
+ ___FILEBASENAME___.prototype.initListener = function(upBlock,downBlock)
  {
- cordovaRef.exec("___FILEBASENAME___.startListen", upBlock,downBlock);
+ cordovaRef.exec("___FILEBASENAME___.initListener", upBlock,downBlock);
+ };
+ 
+ ___FILEBASENAME___.prototype.startListen = function(id,upBlock,downBlock)
+ {
+ cordovaRef.exec("___FILEBASENAME___.startListen", id,upBlock,downBlock);
  };
  
  
