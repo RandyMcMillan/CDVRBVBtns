@@ -13,19 +13,17 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "RBVolumeButtons.h"
 
-@interface ___FILEBASENAME___ : CDVPlugin{
-
-    float launchVolume;
-    IBOutlet UILabel *counterLabel;
-    int counter;
-
+@interface ___FILEBASENAME___ : CDVPlugin {
+	float				launchVolume;
+	IBOutlet UILabel	*counterLabel;
+	int					counter;
 }
 
-@property (nonatomic,strong) RBVolumeButtons *buttonListener;
-@property (nonatomic,strong) NSString *callBackId;
-@property (nonatomic,strong) NSString *objectAtIndex0;
-@property (nonatomic,strong) NSString *objectAtIndex1;
-@property (nonatomic,strong) NSString *objectAtIndex2;
+@property (nonatomic, strong) RBVolumeButtons	*buttonListener;
+@property (nonatomic, strong) NSString			*callBackId;
+@property (nonatomic, strong) NSString			*objectAtIndex0;
+@property (nonatomic, strong) NSString			*objectAtIndex1;
+@property (nonatomic, strong) NSString			*objectAtIndex2;
 
 - (void)initListener:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
 - (void)startListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;

@@ -8,23 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^ButtonBlock)();
+typedef void (^ ButtonBlock)();
 
 @interface RBVolumeButtons : NSObject
 {
-   float launchVolume;
-   BOOL hadToLowerVolume;
-   BOOL hadToRaiseVolume;
-   BOOL justEnteredForeground;
+	float	launchVolume;
+	BOOL	hadToLowerVolume;
+	BOOL	hadToRaiseVolume;
+	BOOL	justEnteredForeground;
 }
 
 @property (nonatomic, copy) ButtonBlock upBlock;
 @property (nonatomic, copy) ButtonBlock downBlock;
-@property (readonly) float launchVolume;
+@property (readonly) float				launchVolume;
 
--(void)applicationCameBack;
--(void)applicationWentAway;
--(void)startStealingVolumeButtonEvents;
--(void)stopStealingVolumeButtonEvents;
+- (void)applicationCameBack;
+- (void)applicationWentAway;
+- (void)startStealingVolumeButtonEvents;
+- (void)stopStealingVolumeButtonEvents;
 
 @end
