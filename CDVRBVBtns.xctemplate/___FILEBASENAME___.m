@@ -9,7 +9,6 @@
 
 @implementation ___FILEBASENAME___
 
-@synthesize ___FILEBASENAME___;
 
 - (void)initListener:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options
 {
@@ -30,15 +29,6 @@
 		NSLog(@"Error setting AVAudioSessionCategoryPlayback: %@", setCategoryError);
 	}
 
-	if (self.___FILEBASENAME___ == nil) {
-#if __has_feature(objc_arc)
-			self.___FILEBASENAME___ = [[___FILEBASENAME___ViewController alloc] initWithScale:NO];
-#else
-			self.___FILEBASENAME___ = [[[___FILEBASENAME___ViewController alloc] initWithScale:NO] autorelease];
-#endif
-		self.___FILEBASENAME___.delegate			= self;
-		self.___FILEBASENAME___.orientationDelegate = self.viewController;
-	}
 
 	/* // TODO: Work in progress
 	 *   NSString* strOrientations = [ options objectForKey:@"supportedOrientations"];
@@ -131,8 +121,6 @@
 #if !__has_feature(objc_arc)
 	- (void)dealloc
 	{
-		self.___FILEBASENAME___ = nil;
-
 		[super dealloc];
 	}
 

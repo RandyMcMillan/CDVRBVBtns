@@ -9,12 +9,11 @@
 //  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
 
 #import <Cordova/CDVPlugin.h>
-#import "___FILEBASENAME___ViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "RBVolumeButtons.h"
 
-@interface ___FILEBASENAME___ : CDVPlugin <___FILEBASENAME___Delegate>{
+@interface ___FILEBASENAME___ : CDVPlugin{
 
     float launchVolume;
     IBOutlet UILabel *counterLabel;
@@ -22,7 +21,6 @@
 
 }
 
-@property (nonatomic, strong) ___FILEBASENAME___ViewController *___FILEBASENAME___;
 @property (nonatomic,strong) RBVolumeButtons *buttonListener;
 @property (nonatomic,strong) NSString *callBackId;
 @property (nonatomic,strong) NSString *objectAtIndex0;
