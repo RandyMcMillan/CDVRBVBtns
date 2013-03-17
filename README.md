@@ -33,6 +33,26 @@ or
 [Sample index.html is included in the generated plugin](https://raw.github.com/RandyMcMillan/CDVRBVBtns/master/CDVRBVBtns.xctemplate/index.html)
 
 
+
+USAGE:
+
+Initialize the button listener:
+`<button onclick="cordova.exec('___FILEBASENAME___.initListener','id','upBlock','downBlock');">Click to initListen!</button>`
+
+Start listening and assign functions to be triggered with Volume buttons
+`<button onclick="cordova.exec('___FILEBASENAME___.startListen','id','upBlock','downBlock');">Click to startListen!</button>`
+
+Stop listening to Volume buttons and release back to iOS
+`<button onclick="cordova.exec('___FILEBASENAME___.stopListen','id', 'upBlock','downBlock');">Click to stopListen!</button>`
+
+NOTES: 
+
+• To restart plugin: Reinitialize "initListen" and restart listening "startListen" if "stopListening" was called.
+
+• `upBlock` and `downBlock` are the names of the functions to be triggered. Refer to example [index.html](https://raw.github.com/RandyMcMillan/CDVRBVBtns/master/CDVRBVBtns.xctemplate/index.html)
+
+
+
 <br><br>
 
  Licensed to the Apache Software Foundation (ASF) under one
