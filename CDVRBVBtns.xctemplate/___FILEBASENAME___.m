@@ -12,7 +12,7 @@
 - (void)initListener:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options
 {
 	NSLog(@"initListener");
-	RBVolumeButtons *buttonListener = [[[RBVolumeButtons alloc] init] autorelease];
+	RBVolumeButtons *buttonListener = /*[*/[[RBVolumeButtons alloc] init] /*autorelease]*/;
 	self.buttonListener = buttonListener;
 }
 
@@ -65,8 +65,10 @@
 
 		// NSString *jsString = k___FILEBASENAME___INIT;
 		NSString *jsString = [NSString stringWithFormat:@"%@('%d');", [arguments objectAtIndex:1], counter];
-		[mvc___FILEBASENAME___.webView stringByEvaluatingJavaScriptFromString:jsString];
-		// result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Success! const k___FILEBASENAME___INIT was evaluated by webview!"];
+		
+        [(UIWebView *)mvc___FILEBASENAME___.webView stringByEvaluatingJavaScriptFromString:jsString];
+        
+        // result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Success! const k___FILEBASENAME___INIT was evaluated by webview!"];
 		// [self writeJavascript:[result toSuccessCallbackString:callbackId]];
 	};
 
@@ -81,7 +83,7 @@
 
 		// NSString *jsString = k___FILEBASENAME___INIT;
 		NSString *jsString = [NSString stringWithFormat:@"%@('%d');", [arguments objectAtIndex:2], counter];
-		[mvc___FILEBASENAME___.webView stringByEvaluatingJavaScriptFromString:jsString];
+		[(UIWebView *)mvc___FILEBASENAME___.webView stringByEvaluatingJavaScriptFromString:jsString];
 		// result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Success! const k___FILEBASENAME___INIT was evaluated by webview!"];
 		// [self writeJavascript:[result toSuccessCallbackString:callbackId]];
 	};
