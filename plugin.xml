@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="net.randymcmillan.CDVRBVBtns"
+        version="0.7.0">
+
+  <name>Hello</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/CDVRBVBtns.js" target="js/CDVRBVBtns.js"/>
+
+  <js-module src="www/CDVRBVBtns.js" name="CDVRBVBtns">
+    <clobbers target="CDVRBVBtns" />
+  </js-module>
+
+ 
+  <platform name="ios">
+    
+    <config-file target="config.xml" parent="/widget">
+      <feature name="CDVRBVBtns">
+        <param name="ios-package" value="CDVRBVBtns" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/CDVRBVBtns.h" target-dir="CDVRBVBtns"/>
+    <source-file src="src/ios/CDVRBVBtns.m" target-dir="CDVRBVBtns"/>
+  </platform>
+
+</plugin>
