@@ -13,7 +13,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "RBVolumeButtons.h"
 
-@interface ___FILEBASENAME___ : CDVPlugin {
+@interface CDVRBVBtns : CDVPlugin {
 	float				launchVolume;
 	IBOutlet UILabel	*counterLabel;
 	int					counter;

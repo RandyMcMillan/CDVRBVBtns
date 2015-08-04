@@ -24,7 +24,7 @@
  *     Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
  */
 
-#import "___FILEBASENAME____JS.h"
+#import "CDVRBVBtns_JS.h"
 
 @implementation ___FILEBASENAME____JS
 

@@ -7,7 +7,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "CDVRBVBtns_JS.h"
 
-@implementation ___FILEBASENAME___
+@implementation CDVRBVBtns
 
 - (void)initListener:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options
 {

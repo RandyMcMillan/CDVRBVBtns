@@ -26,7 +26,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ___FILEBASENAME____JS : NSObject {}
+@interface CDVRBVBtns_JS : NSObject {}
 
 extern NSString *const k___FILEBASENAME___INIT;
 
