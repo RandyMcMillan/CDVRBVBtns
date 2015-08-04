@@ -105,6 +105,21 @@
 	// self.buttonListener = nil;
 }
 
+- (void)greet:(CDVInvokedUrlCommand*)command
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
+    NSString* callbackId = [command callbackId];
+    NSString* name = [[command arguments] objectAtIndex:0];
+    NSString* msg = [NSString stringWithFormat: @"Hello, %@", name];
+
+    CDVPluginResult* result = [CDVPluginResult
+                               resultWithStatus:CDVCommandStatus_OK
+                               messageAsString:msg];
+
+    [self success:result callbackId:callbackId];
+}
+
 #if !__has_feature(objc_arc)
 	- (void)dealloc
 	{

@@ -26,7 +26,7 @@
 
 #import "CDVRBVBtns_JS.h"
 
-@implementation ___FILEBASENAME____JS
+@implementation CDVRBVBtns_JS
 
 // Remove line breaks/returns to use as one constant string!
 // Yes you can inject self executing functions into the webView!
