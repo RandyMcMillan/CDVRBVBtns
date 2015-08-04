@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+        <meta charset="utf-8">
+            
+            
+            <!-- iPad/iPhone specific css below, add after your main css >
+             <link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />
+             <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />
+             -->
+            <!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
+            <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+            
+            <script type="text/javascript" charset="utf-8" src="___FILEBASENAME___.js"></script>
+            
+            
+            <script type="text/javascript">
+                
+                
+                /*
+                 //  ___FILEBASENAME___ Template Created Jan 7 2013
+                 //  Copyright 2013 @RandyMcMillan
+                 
+                 //  Created by ___FULLUSERNAME___ on ___DATE___.
+                 //  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
+                 */
+                function onBodyLoad()
+                {
+                    document.addEventListener("deviceready", onDeviceReady, false);
+                }
+                
+                
+                
+                /* When this function is called, PhoneGap has been initialized and is ready to roll */
+                function onDeviceReady() {
+                    
+                    var root = this;
+                    
+                    cb = window.plugins.___FILEBASENAME___;
+                    
+                    if (cb != null) {
+                        cb.onLocationChange = function(loc){ root.locChanged(loc); };
+                        cb.onClose = function(){root.onCloseBrowser()};
+                        cb.onOpenExternal = function(){root.onOpenExternal();};
+                        //cb.startListen("id","upBlock","downBlock");
+                        
+                    }
+                }
+                
+                function onCloseBrowser() {
+                    console.log("onCloseBrowser!");
+                }
+                
+                function locChanged(loc) {
+                    console.log("locChanged!");
+                }
+                
+                function onOpenExternal() {
+                    console.log("onOpenExternal!");
+                }
+                
+                
+                /*
+                 
+                 
+                 loc = 'http://www.google.com';
+                 cordova.exec("___FILEBASENAME___.showWebPage", loc);
+                 
+                 
+                 */
+                function upBlock(counter){
+                    
+                    console.log('upBlock');
+                    console.log(counter);
+                    document.getElementById("p").innerHTML=counter;
+                    
+                    if (counter <= -6) {
+                        
+                        document.body.style.background = "#0000000";
+                        document.body.style.color = "#ffffff";
+                        
+                    }if (counter == -5) {
+                        
+                        document.body.style.background = "#aaaaaaa";
+                        document.body.style.color = "#eeeeee";
+                        
+                    }if (counter == -4) {
+                        
+                        document.body.style.background = "#bbbbbbb";
+                        document.body.style.color = "#dddddd";
+                        
+                    }if (counter == -3) {
+                        
+                        document.body.style.background = "#ccccccc";
+                        document.body.style.color = "#cccccc";
+                        
+                    }if (counter == -2) {
+                        
+                        document.body.style.background = "#ddddddd";
+                        document.body.style.color = "#bbbbbb";
+                        
+                    }
+                    if (counter == -1) {
+                        
+                        document.body.style.background = "#eeeeee";
+                        document.body.style.color = "#aaaaaa";
+                        
+                    }
+                    if (counter == 0) {
+                        
+                        document.body.style.background = "#ffffff";
+                        document.body.style.color = "#000000";
+                        
+                    }
+                    if (counter == 1) {
+                        
+                        document.body.style.background = "#aaaaaa";
+                        document.body.style.color = "#eeeeee";
+                        
+                    }
+                    if (counter == 2) {
+                        
+                        document.body.style.background = "#bbbbbb";
+                        document.body.style.color = "#dddddd";
+                        
+                    } if (counter == 3) {
+                        
+                        document.body.style.background = "#cccccc";
+                        document.body.style.color = "#cccccc";
+                        
+                    } if (counter == 4) {
+                        
+                        document.body.style.background = "#dddddd";
+                        document.body.style.color = "#bbbbbb";
+                        
+                    } if (counter == 5) {
+                        
+                        document.body.style.background = "#eeeeee";
+                        document.body.style.color = "#aaaaaa";
+                        
+                    } if (counter >= 6) {
+                        
+                        document.body.style.background = "#ffffff";
+                        document.body.style.color = "#000000";
+                        
+                    }
+                    
+                }
+                
+                function downBlock(counter){
+                    
+                    console.log('downBlock');
+                    console.log(counter);
+                    document.getElementById("p").innerHTML=counter;
+                    
+                    
+                    if (counter <= -6) {
+                        
+                        document.body.style.background = "#0000000";
+                        document.body.style.color = "#ffffff";
+                        
+                    }if (counter == -5) {
+                        
+                        document.body.style.background = "#aaaaaaa";
+                        document.body.style.color = "#eeeeee";
+                        
+                    }if (counter == -4) {
+                        
+                        document.body.style.background = "#bbbbbbb";
+                        document.body.style.color = "#dddddd";
+                        
+                    }if (counter == -3) {
+                        
+                        document.body.style.background = "#ccccccc";
+                        document.body.style.color = "#cccccc";
+                        
+                    }if (counter == -2) {
+                        
+                        document.body.style.background = "#ddddddd";
+                        document.body.style.color = "#bbbbbb";
+                        
+                    }
+                    if (counter == -1) {
+                        
+                        document.body.style.background = "#eeeeee";
+                        document.body.style.color = "#aaaaaa";
+                        
+                    }
+                    if (counter == 0) {
+                        
+                        document.body.style.background = "#ffffff";
+                        document.body.style.color = "#000000";
+                        
+                    }
+                    if (counter == 1) {
+                        
+                        document.body.style.background = "#aaaaaa";
+                        document.body.style.color = "#eeeeee";
+                        
+                    }
+                    if (counter == 2) {
+                        
+                        document.body.style.background = "#bbbbbb";
+                        document.body.style.color = "#dddddd";
+                        
+                    } if (counter == 3) {
+                        
+                        document.body.style.background = "#cccccc";
+                        document.body.style.color = "#cccccc";
+                        
+                    } if (counter == 4) {
+                        
+                        document.body.style.background = "#dddddd";
+                        document.body.style.color = "#bbbbbb";
+                        
+                    } if (counter == 5) {
+                        
+                        document.body.style.background = "#eeeeee";
+                        document.body.style.color = "#aaaaaa";
+                        
+                    } if (counter >= 6) {
+                        
+                        document.body.style.background = "#ffffff";
+                        document.body.style.color = "#000000";
+                        
+                    }
+                    
+                }
+                
+                </script>
+            </head>
+    <body onload="onBodyLoad()">
+        <h1>Hey, it's Cordova!</h1>
+        <p id="p">Don't know how to get started? Check out our <em><a target="_blank" href="http://docs.phonegap.com/en/edge/guide_getting-started_ios_index.md.html#Getting%20Started%20with%20iOS">Getting Started Guide</a></em>
+        <br />
+        <ol>
+            <li>Check your console log for any white-list rejection errors.</li>
+            <li>Add your allowed <strong>hosts</strong> in Cordova.plist/ExternalHosts (wildcards OK, don't enter the URL scheme)</li>
+        </ol>
+        
+        <!--<button onclick="cb.startListen('id','upBlock','downBLock');">Click to startListen!</button>-->
+        </br></br> <button onclick="cordova.exec('___FILEBASENAME___.initListener','id', 'upBlock','downBlock');">Click to initListen!</button>
+        </br></br> <button onclick="cordova.exec('___FILEBASENAME___.startListen','id','upBlock','downBlock');">Click to startListen!</button>
+        </br></br> <button onclick="cordova.exec('___FILEBASENAME___.stopListen','id', 'upBlock','downBlock');">Click to stopListen!</button>
+        
+    </body>
+</html>

@@ -1,0 +1,89 @@
+CDVRBVBtns
+===
+
+Cordova (iOS) Xcode Plugin Template
+---
+
+
+
+###Installation:
+    $ cd ~/Library/Developer/Xcode/Templates/File\ Templates
+    $ git clone https://github.com/RandyMcMillan/CDVRBVBtns.git
+
+![image](https://raw.github.com/RandyMcMillan/CDVRBVBtns/master/ScreenShot.png)
+
+or 
+
+[https://github.com/RandyMcMillan/cdv-ios-plugin-templates](https://github.com/RandyMcMillan/cdv-ios-plugin-templates)    
+    
+###Usage:
+####Open your Cordova (iOS) Xcode Project
+
+* Press `<COMMAND+n>`    
+
+    ![image](https://raw.github.com/RandyMcMillan/CDVRBVBtns/master/ScreenShot2.png)  
+
+
+    ![image](https://raw.github.com/RandyMcMillan/CDVRBVBtns/master/ScreenShot3.png)  
+
+* Copy the CDVRBVBtns.js file to your /www folder
+
+    ![image](https://raw.github.com/RandyMcMillan/CDVRBVBtns/master/ScreenShot4.png)
+    
+[Sample index.html is included in the generated plugin](https://raw.github.com/RandyMcMillan/CDVRBVBtns/master/CDVRBVBtns.xctemplate/index.html)
+
+
+
+USAGE:
+
+Initialize the button listener:
+`<button onclick="cordova.exec('___FILEBASENAME___.initListener','id','upBlock','downBlock');">Click to initListen!</button>`
+
+Start listening and assign functions to be triggered with Volume buttons
+`<button onclick="cordova.exec('___FILEBASENAME___.startListen','id','upBlock','downBlock');">Click to startListen!</button>`
+
+Stop listening to Volume buttons and release back to iOS
+`<button onclick="cordova.exec('___FILEBASENAME___.stopListen','id', 'upBlock','downBlock');">Click to stopListen!</button>`
+
+NOTES: 
+
+• To restart plugin: Reinitialize "initListen" and restart listening "startListen" if "stopListening" was called.
+
+• `upBlock` and `downBlock` are the names of the functions to be triggered. Refer to example [index.html](https://raw.github.com/RandyMcMillan/CDVRBVBtns/master/CDVRBVBtns.xctemplate/index.html)
+
+
+
+<br><br>
+
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ 
+ 
+ or 
+ 
+ 
+The MIT License
+
+
+  CDVRBVBtns Template Created Jan 7 2013
+  Copyright 2013 @RandyMcMillan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
