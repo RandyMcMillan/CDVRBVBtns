@@ -25,7 +25,8 @@
 @property (nonatomic, strong) NSString			*objectAtIndex1;
 @property (nonatomic, strong) NSString			*objectAtIndex2;
 
-- (void)initListener:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
+- (void)initListener:(CDVInvokedUrlCommand*)command;
+//- (void)initListener:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
 - (void)startListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
 - (void)stopListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
 - (void) greet:(CDVInvokedUrlCommand*)command;

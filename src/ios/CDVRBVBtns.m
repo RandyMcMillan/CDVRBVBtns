@@ -2,6 +2,21 @@
 //  Copyright 2010 Nitobi. All rights reserved.
 //
 
+/* //Old Triggers
+ 
+ 
+ Initialize the button listener:
+ `<button onclick="cordova.exec('___FILEBASENAME___.initListener','id','upBlock','downBlock');">Click to initListen!</button>`
+ 
+ Start listening and assign functions to be triggered with Volume buttons
+ `<button onclick="cordova.exec('___FILEBASENAME___.startListen','id','upBlock','downBlock');">Click to startListen!</button>`
+ 
+ Stop listening to Volume buttons and release back to iOS
+ `<button onclick="cordova.exec('___FILEBASENAME___.stopListen','id', 'upBlock','downBlock');">Click to stopListen!</button>`
+ 
+ */
+
+
 #import "CDVRBVBtns.h"
 #import <Cordova/CDVViewController.h>
 #import <AVFoundation/AVFoundation.h>
@@ -9,15 +24,18 @@
 
 @implementation CDVRBVBtns
 
-- (void)initListener:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options
+
+- (void)initListener:(CDVInvokedUrlCommand*)command
+//- (void)initListener:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options
 {
-	NSLog(@"initListener");
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 	RBVolumeButtons *buttonListener = /*[*/[[RBVolumeButtons alloc] init] /*autorelease]*/;
 	self.buttonListener = buttonListener;
 }
 
 - (void)startListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options	// args: url
 {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 	/* setting audio session category to "Playback" (since iOS 6) */
 	AVAudioSession	*audioSession		= [AVAudioSession sharedInstance];
 	NSError			*setCategoryError	= nil;
@@ -26,11 +44,6 @@
 	if (!ok) {
 		NSLog(@"Error setting AVAudioSessionCategoryPlayback: %@", setCategoryError);
 	}
-
-	/* // TODO: Work in progress
-	 *   NSString* strOrientations = [ options objectForKey:@"supportedOrientations"];
-	 *   NSArray* supportedOrientations = [strOrientations componentsSeparatedByString:@","];
-	 */
 
 	NSString	*upBlock	= (NSString *)[arguments objectAtIndex:0];
 	NSString	*downBlock	= (NSString *)[arguments objectAtIndex:1];
@@ -94,7 +107,7 @@
 
 - (void)stopListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options
 {
-	NSLog(@"stopListen");
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 	[self.buttonListener stopStealingVolumeButtonEvents];
 	self.buttonListener = nil;
 	// RBVolumeButtons *buttonListener = [[[RBVolumeButtons alloc] init] autorelease];
@@ -117,7 +130,9 @@
                                resultWithStatus:CDVCommandStatus_OK
                                messageAsString:msg];
 
-    [self success:result callbackId:callbackId];
+    //[self success:result callbackId:callbackId];
+    [self.commandDelegate sendPluginResult:result callbackId:callbackId];
+    
 }
 
 #if !__has_feature(objc_arc)
