@@ -33,7 +33,9 @@
 	self.buttonListener = buttonListener;
 }
 
-- (void)startListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options	// args: url
+- (void)startListener:(CDVInvokedUrlCommand*)command
+
+//- (void)startListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options	// args: url
 {
     NSLog(@"%@", NSStringFromSelector(_cmd));
 	/* setting audio session category to "Playback" (since iOS 6) */
@@ -45,22 +47,22 @@
 		NSLog(@"Error setting AVAudioSessionCategoryPlayback: %@", setCategoryError);
 	}
 
-	NSString	*upBlock	= (NSString *)[arguments objectAtIndex:0];
-	NSString	*downBlock	= (NSString *)[arguments objectAtIndex:1];
-	NSLog(@" upBlock - %@, downBlock - %@", upBlock, downBlock);
+	NSString	*upBlock	= (NSString *)[[command arguments] objectAtIndex:0];
+	//NSString	*downBlock	= (NSString *)[[command arguments] objectAtIndex:1];
+	//NSLog(@" upBlock - %@, downBlock - %@", upBlock, downBlock);
 
-	for (int i = 0; i < [arguments count]; i++) {
-		NSLog(@"arguments objectAtIndex:%d = %@", i, [arguments objectAtIndex:i]);
+	for (int i = 0; i < [[command arguments] count]; i++) {
+		NSLog(@"arguments objectAtIndex:%d = %@", i, [[command arguments] objectAtIndex:i]);
 		// NSLog(@"arguments pop = %@",[arguments pop]);
 	}
 
 	// self.callBackId		= [arguments pop];
 	// NSLog(@"callBackId = %@",self.callBackId);
-	self.objectAtIndex0 = [arguments objectAtIndex:0];
+	self.objectAtIndex0 = [[command arguments] objectAtIndex:0];
 	NSLog(@"objectAtIndex0 = %@", self.objectAtIndex0);
-	self.objectAtIndex1 = [arguments objectAtIndex:1];
+	self.objectAtIndex1 = [[command arguments] objectAtIndex:1];
 	NSLog(@"objectAtIndex1 = %@", self.objectAtIndex1);
-	self.objectAtIndex2 = [arguments objectAtIndex:2];
+	self.objectAtIndex2 = [[command arguments] objectAtIndex:2];
 	NSLog(@"objectAtIndex2 = %@", self.objectAtIndex2);
 	CDVViewController *mvc___FILEBASENAME___ = (CDVViewController *)[super viewController];
 	// CDVPluginResult		*result;
@@ -73,11 +75,12 @@
 	self.buttonListener.upBlock =^{
 		counter++;
 
-		NSLog (@"objectAtIndex:%@ %i", [arguments objectAtIndex:1], counter);
-		// [counterLabel setText:[NSString stringWithFormat:@"%i",counter]];
+		NSLog (@"objectAtIndex:%@ %i", [[command arguments] objectAtIndex:1], counter);
+		 [counterLabel setText:[NSString stringWithFormat:@"%i",counter]];
 
 		// NSString *jsString = k___FILEBASENAME___INIT;
-		NSString *jsString = [NSString stringWithFormat:@"%@('%d');", [arguments objectAtIndex:1], counter];
+		NSString *jsString = [NSString stringWithFormat:@"%@('%d');", [[command arguments]//objectAtIndex:1], counter];
+           objectAtIndex:0],counter];
 		
         [(UIWebView *)mvc___FILEBASENAME___.webView stringByEvaluatingJavaScriptFromString:jsString];
         
@@ -91,11 +94,11 @@
 		// [counterLabel setText:[NSString stringWithFormat:@"%i",counter]];
 		NSLog (@"downBlock %i", counter);
 
-		NSLog (@"objectAtIndex:%@ %i", [arguments objectAtIndex:2], counter);
+		NSLog (@"objectAtIndex:%@ %i", [[command arguments] objectAtIndex:2], counter);
 		// [counterLabel setText:[NSString stringWithFormat:@"%i",counter]];
 
 		// NSString *jsString = k___FILEBASENAME___INIT;
-		NSString *jsString = [NSString stringWithFormat:@"%@('%d');", [arguments objectAtIndex:2], counter];
+		NSString *jsString = [NSString stringWithFormat:@"%@('%d');", [[command arguments] objectAtIndex:2], counter];
 		[(UIWebView *)mvc___FILEBASENAME___.webView stringByEvaluatingJavaScriptFromString:jsString];
 		// result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Success! const k___FILEBASENAME___INIT was evaluated by webview!"];
 		// [self writeJavascript:[result toSuccessCallbackString:callbackId]];

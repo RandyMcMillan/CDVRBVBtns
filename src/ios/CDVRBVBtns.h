@@ -27,7 +27,8 @@
 
 - (void)initListener:(CDVInvokedUrlCommand*)command;
 //- (void)initListener:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
-- (void)startListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
+- (void)startListener:(CDVInvokedUrlCommand*)command;
+//- (void)startListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
 - (void)stopListen:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
 - (void) greet:(CDVInvokedUrlCommand*)command;
 

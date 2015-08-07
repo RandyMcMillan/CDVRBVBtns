@@ -11,12 +11,14 @@ initListener: function (name, successCallback, errorCallback) {
 
 },
 
-startListener: function (name, successCallback, errorCallback) {
-
+startListener: function (array, successCallback, errorCallback) {
+    
     //cordova.exec('___FILEBASENAME___.startListen','id','upBlock','downBlock');
-   cordova.exec(successCallback, errorCallback, "CDVRBVBtns", "startListener", [name]);
+    //cordova.exec('___FILEBASENAME___.startListen','id','upBlock','downBlock');
+    cordova.exec(successCallback, errorCallback, "CDVRBVBtns", "startListener", array);
     
 },
+
 
 stopListener: function (name, successCallback, errorCallback) {
 
